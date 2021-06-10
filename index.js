@@ -17,11 +17,13 @@ const articlesController = require("./articles/ArticlesController")
 const Article = require("./articles/Article")
 const Category = require("./categories/Category")
 
+const path = require('path')
+
 // Motor de renderização = ejs
 app.set('view engine', 'ejs')
 
 // Local onde ficara os arquivos estaticos
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Body parser
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -42,7 +44,9 @@ app.use("/", categoriesController)
 app.use("/", articlesController)
 
 app.get("/", (req, res) => {
-    res.render("index")
+    Article.findAll().then(articles => {
+        res.render("index", {articles: articles})
+    })
 })
 
 // A porta responsavel pela inicialização do servidor
