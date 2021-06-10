@@ -14,7 +14,6 @@ routes.get("/admin/categories/new", (req, res) => {
 routes.post("/categories/save", (req, res) => {
     let title = req.body.title
     if (title != undefined) {
-
         Category.create({
             title: title,
             slug: slugify(title)
@@ -65,6 +64,19 @@ routes.get("/admin/categories/edit/:id", (req, res) => {
             res.redirect("/admin/categories")
         }
     }).catch(error => {
+        res.redirect("/admin/categories")
+    })
+})
+
+routes.post("/categories/update", (req, res) => {
+    let id = req.body.id
+    let title = req.body.title
+    
+    Category.update({ title: title, slug: slugify(title) }, {
+        where: {
+            id: id
+        }
+    }).then(() => {
         res.redirect("/admin/categories")
     })
 })
