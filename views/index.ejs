@@ -1,17 +1,55 @@
 <%- include ('./partials/header.ejs'); %>
-<%- include ('./partials/navbar.ejs'); %>
+<%- include ('./partials/navbar_home.ejs'); %>
 <body>
-    <div class="container">
-        <section class="bg-dark text-light p-5 text-center">
+        <section class="bg-dark text-light p-5 text-center text-sm-start">
             <div class="container">
-                <div>
+                <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <h1>Bem vindo ao blog</h1>
+                        <h1>Bem vindo ao <span class="text-warning">Blog</span></h1>
+                        <p class="lead my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel vehicula lacus. Maecenas luctus ultricies condimentum. Vivamus condimentum malesuada dignissim. Quisque varius augue dui, maximus accumsan nisl pulvinar sit amet. Sed rutrum lobortis ex, in lacinia diam interdum ut.</p>
+                        <button class="btn btn-primary btn-lg">Lorem</button>
                     </div>
-                    <img src="/public/img/section_image.svg" alt="" width="90">
+                    <img class="img-fluid w-50 d-none d-sm-block" src="/public/img/section_image.svg" alt="">
                 </div>
             </div>
         </section>
-    </div>
+
+        <section class="bg-primary text-light p-5">
+            <div class="container">
+                <div class="d-md-flex justify-content-between align-items-center">
+                    <h3 class="mb-3 mb-md-9">Inscreva-se na nossa Newsletter</h3>
+                    <div class="input-group news-input">
+                        <input type="text" class="form-control" placeholder="Insira seu email" aria-label="Insira seu email" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-dark btn-lg" type="button">Button</button>
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md">
+                        <div class="card bg-dark text-light">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <h3 class="card-title mb-3">
+                                    Lorem
+                                </h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum facilis laboriosam repudiandae necessitatibus quaerat blanditiis soluta amet!
+                                </p>
+                                <a href="#" class="btn btn-dark">Ler mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 </body>
 <%- include ('./partials/footer.ejs'); %> 
