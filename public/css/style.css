@@ -1,0 +1,11 @@
+.table-head{
+    background-color: #6c7ae0 !important;
+}
+
+/* MEDIAS QUERIES */
+@media (min-width: 768px) {
+    .news-input{
+        width: 50%;
+    }
+}
+
