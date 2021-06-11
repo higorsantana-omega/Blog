@@ -13,9 +13,12 @@ const connection = require("./database/database")
 // Importar rotas
 const categoriesController = require("./categories/CategoriesController")
 const articlesController = require("./articles/ArticlesController")
+const usersController = require("./users/UsersController")
+
 
 const Article = require("./articles/Article")
 const Category = require("./categories/Category")
+const USer = require("./users/User")
 
 const path = require('path')
 
@@ -42,13 +45,15 @@ connection
 app.use("/", categoriesController)
 // Rotas dos artigos
 app.use("/", articlesController)
+// Rotas dos usuarios
+app.use("/", usersController)
 
 app.get("/", (req, res) => {
     Article.findAll({
         order: [
             ['id', 'DESC']
         ],
-        
+
         limit: 4
     }).then(articles => {
         Category.findAll().then(categories => {

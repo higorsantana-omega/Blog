@@ -1,7 +1,6 @@
 const routes = require("express").Router()
 const Category = require("./Category")
 const slugify = require("slugify")
-const { Router } = require("express")
 
 routes.get("/categories", (req, res) => {
     res.send("Categorias")
