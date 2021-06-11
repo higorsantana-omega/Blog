@@ -1,0 +1,42 @@
+<%- include ('../../partials/header.ejs'); %> 
+<%- include ('../../partials/navbar.ejs'); %> 
+
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Editar artigos</h2>
+        </div>
+        <div class="card-body">
+            <form class="mt-4" method="POST" action="/articles/update">
+                <input type="hidden" value="<%= artigo.id %> " name="id">
+                <input class="form-control" type="text" name="title" placeholder="Defina o titulo da categoria" value="<%= artigo.title %> ">
+                <textarea class="form-control mt-4" placeholder="Escrava o artigo aqui" name="body" id="article">
+                    <%= artigo.body %> 
+                </textarea>
+                <select name="category" class="form-control">
+                    <% categories.forEach((category) => { %>
+                        <% if (category.id === artigo.categoriaId) { %>
+                            <option value="<%= category.id %> " selected><%= category.title %> </option>
+                        <% } else { %>
+                            <option value="<%= category.id %> "><%= category.title %> </option>
+                        <% } %> 
+                    <% }); %> 
+                </select>
+                <button class="btn btn-success mt-4">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs'); %>
+
+<script src="/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#article",
+        plugins: [
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+        ],
+    })
+</script>   

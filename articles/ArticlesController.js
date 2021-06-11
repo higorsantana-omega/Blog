@@ -53,18 +53,41 @@ routes.post("/articles/delete", (req, res) => {
 
 routes.get("/admin/articles/edit/:id", (req, res) => {
     let id = req.params.id
-    if (isNaN(id)) {
-        res.redirect("/admin/categories")
-    }
+    Article.findByPk(id).then(artigo => {
+        if (artigo != undefined) {
 
-    Category.findByPk(id).then(category => {
-        if (category != undefined) {
-            res.render("admin/categories/edit", {category: category})
+            Category.findAll().then(categories => {
+                res.render("admin/articles/edit", {categories: categories, artigo:artigo})
+                
+            })
+
         } else {
-            res.redirect("/admin/categories")
+            res.redirect("/")
         }
     }).catch(error => {
-        res.redirect("/admin/categories")
+        res.redirect("/")
+    })
+})
+
+routes.post("/articles/update", (req, res) => {
+    let id = req.body.id
+    let title = req.body.title
+    let body = req.body.body
+    let category = req.body.category
+    
+    Article.update({
+        title: title,
+        slug: slugify(title),
+        body: body,
+        categoriaId: category
+    }, {
+        where: {
+            id: id
+        }
+    }).then(() => {
+        res.redirect("/admin/articles")
+    }).catch(err => {
+        res.redirect("/")
     })
 })
 
