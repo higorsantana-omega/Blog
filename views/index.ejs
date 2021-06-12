@@ -9,7 +9,7 @@
                         <p class="lead my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel vehicula lacus. Maecenas luctus ultricies condimentum. Vivamus condimentum malesuada dignissim. Quisque varius augue dui, maximus accumsan nisl pulvinar sit amet. Sed rutrum lobortis ex, in lacinia diam interdum ut.</p>
                         <button class="btn btn-primary btn-lg">Lorem</button>
                     </div>
-                    <img class="img-fluid w-50 d-none d-sm-block" src="/public/img/section_image.svg" alt="">
+                    <img class="img-fluid w-50 d-none d-sm-block" src="img/section_image.svg" alt="">
                 </div>
             </div>
         </section>
@@ -24,29 +24,35 @@
                           <button class="btn btn-dark btn-lg" type="button">Button</button>
                         </div>
                       </div>
-                      
                 </div>
             </div>
         </section>
 
         <section class="p-5">
             <div class="container">
-                <div class="row text-center">
+                <div class="row">
                     <% articles.forEach(article => { %>
                         <div class="col-md">
-                            <div class="card bg-dark text-light">
-                                <div class="card-body text-center">
-                                    <div class="h1 mb-3">
-                                        <i class="bi bi-laptop"></i>
+                            <div class="card">
+                                <a href="#">
+                                    <!-- antigo  -->
+                                    <img class="card-img-top" src="https://images.unsplash.com/photo-1535025639604-9a804c092faa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6cb0ceb620f241feb2f859e273634393&auto=format&fit=crop&w=500&q=80" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= article.title %> 
+                                        </h5>
+                                        <p class="card-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad alias, aliquid amet aspernatur atque culpa cum debitis dicta doloremque, dolorum ea eos et...
+                                        </p>
+                                        <p class="card-text">
+                                            <small class="text-muted">
+                                                <i class="bi bi-eye">219</i>
+                                                <i class="bi bi-calendar">June 26, 2021</i>
+                                            </small>
+                                        </p>
+                                        <a href="/<%= article.slug %>" class="btn btn-dark">Ler mais</a>
                                     </div>
-                                    <h3 class="card-title mb-3">
-                                        <%= article.title %> 
-                                    </h3>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum facilis laboriosam repudiandae necessitatibus quaerat blanditiis soluta amet!
-                                    </p>
-                                    <a href="/<%= article.slug %>" class="btn btn-dark">Ler mais</a>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     <% }); %> 

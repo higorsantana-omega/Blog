@@ -2,6 +2,30 @@
     background-color: #6c7ae0 !important;
 }
 
+h1 {
+    color: #fff;
+    padding: 10px 0;
+}
+
+.card {
+    border: none;
+}
+
+a{
+    color: initial;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: initial;
+}
+
+.text-muted i {
+    margin: 10px 10px;
+}
+  
+
 /* MEDIAS QUERIES */
 @media (min-width: 768px) {
     .news-input{

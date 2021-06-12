@@ -21,9 +21,10 @@ const usersController = require("./users/UsersController")
 
 const Article = require("./articles/Article")
 const Category = require("./categories/Category")
-const USer = require("./users/User")
+const User = require("./users/User")
 
 const path = require('path')
+let dir = path.join(__dirname, 'public')
 
 // Motor de renderização = ejs
 app.set('view engine', 'ejs')
@@ -35,8 +36,9 @@ app.use(session({
 }))
 
 // Local onde ficara os arquivos estaticos
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(dir))
 
+// app.use('/static', express.static('img'))
 // Body parser
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
