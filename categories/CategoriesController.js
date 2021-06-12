@@ -1,16 +1,17 @@
 const routes = require("express").Router()
 const Category = require("./Category")
 const slugify = require("slugify")
+const adminAuth = require("../middlewares/adminAuth")
 
 routes.get("/categories", (req, res) => {
     res.send("Categorias")
 })
 
-routes.get("/admin/categories/new", (req, res) => {
+routes.get("/admin/categories/new", adminAuth, (req, res) => {
     res.render("../views/admin/categories/new")
 })
 
-routes.post("/categories/save", (req, res) => {
+routes.post("/categories/save", adminAuth, (req, res) => {
     let title = req.body.title
     if (title != undefined) {
         Category.create({
@@ -25,13 +26,13 @@ routes.post("/categories/save", (req, res) => {
     }
 })
 
-routes.get("/admin/categories", (req, res) => {
+routes.get("/admin/categories", adminAuth, (req, res) => {
     Category.findAll().then(categories => {
         res.render("../views/admin/categories/index.ejs", {categories: categories})
     })
 })
 
-routes.post("/categories/delete", (req, res) => {
+routes.post("/categories/delete", adminAuth, (req, res) => {
     let id = req.body.id
     if(id != undefined) {
         if (!isNaN(id)) {
@@ -50,7 +51,7 @@ routes.post("/categories/delete", (req, res) => {
     }
 })
 
-routes.get("/admin/categories/edit/:id", (req, res) => {
+routes.get("/admin/categories/edit/:id", adminAuth, (req, res) => {
     let id = req.params.id
     if (isNaN(id)) {
         res.redirect("/admin/categories")
@@ -67,7 +68,7 @@ routes.get("/admin/categories/edit/:id", (req, res) => {
     })
 })
 
-routes.post("/categories/update", (req, res) => {
+routes.post("/categories/update", adminAuth, (req, res) => {
     let id = req.body.id
     let title = req.body.title
     

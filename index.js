@@ -7,6 +7,9 @@ let express = require("express"),
 // Importar o body parser
 const bodyParser = require("body-parser")
 
+// Session
+const session = require("express-session")
+
 // Importar o banco de dados
 const connection = require("./database/database")
 
@@ -24,6 +27,12 @@ const path = require('path')
 
 // Motor de renderização = ejs
 app.set('view engine', 'ejs')
+
+// Session
+app.use(session({
+    secret: "loremipsum",
+    cookie: {maxAge: 30000}
+}))
 
 // Local onde ficara os arquivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))

@@ -1,13 +1,12 @@
 <%- include ('../../partials/header.ejs'); %>
-<%- include ('../../partials/navbar.ejs'); %>
 
 <div class="container">
     <div class="card mt-4">
         <div class="card-header">
-            <h1>Criar usuario</h1>
+            <h1>Login admin</h1>
         </div>
         <div class="card-body">
-            <form action="/users/create" method="POST">
+            <form action="/authenticate" method="POST">
                 <input class="form-control" type="email" name="email" placeholder="email@exemplo.com">
                 <input type="password" class="form-control mt-4 mb-4" name="password" placeholder="*******">
                 <button class="btn btn-success" type="submit">Criar</button>
