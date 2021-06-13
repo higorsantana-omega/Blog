@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+
+body{
+    font-family: 'PT Sans', sans-serif;
+}
+
 .table-head{
     background-color: #6c7ae0 !important;
 }
@@ -9,6 +16,23 @@ h1 {
 
 .card {
     border: none;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-title:hover{
+    color: #229fd3;
+}
+
+.card-text{
+    size: 15px;
+    color: #666666;
+}
+
+.card-body{
+    padding: 16px 0 0 0;
 }
 
 a{

@@ -30,11 +30,11 @@
 
         <section class="p-5">
             <div class="container">
-                <div class="row">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
                     <% articles.forEach(article => { %>
                         <div class="col-md">
-                            <div class="card">
-                                <a href="#">
+                            <div class="card mb-3">
+                                <a href="/<%= article.slug %> ">
                                     <!-- antigo  -->
                                     <img class="card-img-top" src="https://images.unsplash.com/photo-1535025639604-9a804c092faa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6cb0ceb620f241feb2f859e273634393&auto=format&fit=crop&w=500&q=80" alt="">
                                     <div class="card-body">
@@ -44,10 +44,10 @@
                                         <p class="card-text">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ad alias, aliquid amet aspernatur atque culpa cum debitis dicta doloremque, dolorum ea eos et...
                                         </p>
-                                        <p class="card-text">
+                                        <p class="card-text mb-2">
                                             <small class="text-muted">
-                                                <i class="bi bi-eye">219</i>
-                                                <i class="bi bi-calendar">June 26, 2021</i>
+                                                <i class="bi bi-eye">   219</i>
+                                                <i class="bi bi-calendar">   June 26, 2021</i>
                                             </small>
                                         </p>
                                         <a href="/<%= article.slug %>" class="btn btn-dark">Ler mais</a>

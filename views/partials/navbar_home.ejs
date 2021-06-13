@@ -12,11 +12,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <% categories.forEach(category => { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/<%= category.slug %> "><%= category.title %></a>
-                    </li>
-                <% });  %> 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorias
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <% categories.forEach(category => { %>
+                            <a class="dropdown-item" href="/category/<%= category.slug %> "><%= category.title %></a>
+                        <% });  %>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
