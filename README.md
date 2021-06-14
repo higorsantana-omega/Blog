@@ -23,7 +23,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 ## ☕ Veja o projeto
 
-[Demonstração em video do blog]()
+[Demonstração em video do blog - Home](https://youtu.be/Rzz6wRRc9FQ)
+
+[Demonstração em video do blog - Admin](https://youtu.be/AzWGDN_F7cY)
 
 ## 📫 Tecnologias
 
