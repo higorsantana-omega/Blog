@@ -32,7 +32,7 @@ app.set('view engine', 'ejs')
 // Session
 app.use(session({
     secret: "loremipsum",
-    cookie: {maxAge: 30000}
+    cookie: {maxAge: 3600000}
 }))
 
 // Local onde ficara os arquivos estaticos
