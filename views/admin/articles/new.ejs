@@ -11,12 +11,12 @@
                 <input class="form-control mb-4" type="text" name="title" placeholder="Defina o titulo do artigo">
                 <textarea class="form-control mt-4" placeholder="Escrava o artigo aqui" name="body" id="article"></textarea>
                 <label class="mt-4">Categoria</label>
-                <select name="category" class="form-control">
+                <select name="category" class="form-select">
                     <% categories.forEach((category) => { %>
                         <option value="<%= category.id %> "><%= category.title %> </option>
                     <% }); %> 
                 </select>
-                <button class="btn btn-success mt-4">Cadastrar</button>
+                <button class="btn btn-success mt-4 mb-4">Cadastrar</button>
             </form>
         </div>
     </div>

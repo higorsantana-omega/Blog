@@ -1,18 +1,20 @@
 <%- include ('../../partials/header.ejs'); %>
+<body style="height: 100%;">
+    <div class="d-flex justify-content-center" style="margin-top: 10%;">
+        <form action="/authenticate" method="POST" style="width: 26rem;">
+            <div class="form-outline mb-4">
+                <input type="email" name="email" id="form1Example1" class="form-control">
+                <label class="form-label" for="form1Example1">Email address</label>
+            </div>
 
-<div class="container">
-    <div class="card mt-4">
-        <div class="card-header">
-            <h1>Login admin</h1>
-        </div>
-        <div class="card-body">
-            <form action="/authenticate" method="POST">
-                <input class="form-control" type="email" name="email" placeholder="email@exemplo.com">
-                <input type="password" class="form-control mt-4 mb-4" name="password" placeholder="*******">
-                <button class="btn btn-success" type="submit">Criar</button>
-            </form>
-        </div>
+            <div class="form-outline mb-4">
+                <input type="password" id="form1Example2" class="form-control" name="password">
+                <label class="form-label" for="form1Example2">Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
     </div>
-</div>
-
-<%- include ('../../partials/footer.ejs'); %> 
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js"></script>
+</html>

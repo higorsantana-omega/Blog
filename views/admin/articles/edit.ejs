@@ -13,7 +13,7 @@
                 <textarea class="form-control mt-4" placeholder="Escrava o artigo aqui" name="body" id="article">
                     <%= artigo.body %> 
                 </textarea>
-                <select name="category" class="form-control">
+                <select name="category" class="form-select">
                     <% categories.forEach((category) => { %>
                         <% if (category.id === artigo.categoriaId) { %>
                             <option value="<%= category.id %> " selected><%= category.title %> </option>
