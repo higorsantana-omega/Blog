@@ -1,7 +1,19 @@
 <%- include ('../../partials/header.ejs'); %>
 <%- include ('../../partials/navbar.ejs'); %>
 
-<div class="container">
+<body>
+    <div class="container">
+        <h1 class="h1 mb-3">Criar usuario admin</h1>
+        <form class="form-signin" action="/users/create" method="post">
+        <label for="email_input">Endereço de email</label>
+        <input type="email" name="email" id="email_input" class="form-control" placeholder="email@exemplo.com" required autofocus>
+        <label for="senha_input">*********</label>
+        <input type="password" name="password" id="senha_input" class="form-control" placeholder="*******" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+    </form>
+    </div>
+</body>
+<!-- <div class="container">
     <div class="card mt-4">
         <div class="card-header">
             <h1>Criar usuario</h1>
@@ -14,6 +26,6 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 
 <%- include ('../../partials/footer.ejs'); %> 
