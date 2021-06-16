@@ -1,7 +1,45 @@
 <%- include ('./partials/header.ejs'); %>
 <%- include ('./partials/navbar_home.ejs'); %>
-<body>
-    <section class="p-5">
+<body style="background-color: #F0F0F1;">
+    <section class="mt-3 mb-3">
+        <div class="container">
+            <div class="card bg-light text-dark shadow-sm">
+                <div class="card-header bg-white">
+                    <%- article.updatedAt %> 
+                </div>
+                <img class="card-img-top" src="<%- article.miniature %> " alt="">
+                <div class="container">
+                    <h3 class="card-title p-3">
+                        <%- article.title %> 
+                    </h3>
+                    <div class="card-body p-3">
+                        <%- article.body %> 
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="mt-3 mb-3">
+        <div class="container">
+            <h3>Deixe sua opnião</h3>
+            <p class="mb-2">Seu email não será publicado. Os campos obrigatórios estão marcados com *</p>
+            <form action="">
+                <div class="form-group mb-2">
+                    <label for="form_nome">Nome *</label>
+                    <input type="password" class="form-control mt-1" id="form_nome" placeholder="Seu nome">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="form_email">Email *</label>
+                    <input type="email" class="form-control mt-1" id="form_email" placeholder="seuemail@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="form_coment">Comente</label>
+                    <textarea name="" id="form_coment" rows="5" class="form-control mt-1"></textarea>
+                </div>
+                <button class="btn btn-dark mt-2">Postar comentário</button>
+            </form>
+        </div>
+    </section>
+    <!-- <section class="p-5">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md">
@@ -11,16 +49,14 @@
                                 <i class="bi bi-laptop"></i>
                             </div>
                             <h3 class="card-title mb-3">
-                                <%= article.title %> 
                             </h3>
                             <p class="card-text">
-                                <%- article.body %> 
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </body>
 <%- include ('./partials/footer.ejs'); %> 
