@@ -14,6 +14,9 @@ const Article = connection.define('artigos', {
     }, body: {
         type: Sequelize.TEXT,
         allowNull: false
+    }, miniature: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 
@@ -22,5 +25,7 @@ const Article = connection.define('artigos', {
 Category.hasMany(Article) // Uma categoria tem muitos artigos
 // 1 - p - 1
 Article.belongsTo(Category) // Um artigo pertence a uma categoria
+
+// Article.sync({force: true})
 
 module.exports = Article;

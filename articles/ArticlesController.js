@@ -22,12 +22,14 @@ routes.post("/articles/save", adminAuth, (req, res) => {
     let title = req.body.title
     let body = req.body.body
     let category = req.body.category
+    let miniature = req.body.miniature
 
     Article.create({
         title: title,
         slug: slugify(title),
         body: body,
-        categoriaId: category
+        categoriaId: category,
+        miniature: miniature
     }).then(() => {
         res.redirect("/admin/articles")
     })
