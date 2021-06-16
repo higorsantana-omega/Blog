@@ -32,6 +32,8 @@ app.set('view engine', 'ejs')
 // Session
 app.use(session({
     secret: "loremipsum",
+    resave: false,
+    saveUninitialized: true,
     cookie: {maxAge: 3600000}
 }))
 
