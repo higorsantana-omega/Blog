@@ -29,6 +29,7 @@ let dir = path.join(__dirname, 'public')
 // Motor de renderização = ejs
 app.set('view engine', 'ejs')
 
+
 // Session
 app.use(session({
     secret: "loremipsum",
@@ -36,6 +37,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: {maxAge: 3600000}
 }))
+
 
 // Local onde ficara os arquivos estaticos
 app.use(express.static(dir))
