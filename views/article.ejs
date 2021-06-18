@@ -22,41 +22,46 @@
         <div class="container">
             <h3>Deixe sua opnião</h3>
             <p class="mb-2">Seu email não será publicado. Os campos obrigatórios estão marcados com *</p>
-            <form action="">
+            <form action="/form" method="POST">
                 <div class="form-group mb-2">
                     <label for="form_nome">Nome *</label>
-                    <input type="password" class="form-control mt-1" id="form_nome" placeholder="Seu nome">
+                    <input type="text" class="form-control mt-1" id="form_nome" name="form_nome" placeholder="Seu nome">
                 </div>
                 <div class="form-group mb-2">
                     <label for="form_email">Email *</label>
-                    <input type="email" class="form-control mt-1" id="form_email" placeholder="seuemail@email.com">
+                    <input type="email" class="form-control mt-1" id="form_email" name="form_email" placeholder="seuemail@email.com">
                 </div>
                 <div class="form-group">
                     <label for="form_coment">Comente</label>
-                    <textarea name="" id="form_coment" rows="5" class="form-control mt-1"></textarea>
+                    <textarea name="form_coment" id="form_coment" rows="5" class="form-control mt-1"></textarea>
                 </div>
-                <button class="btn btn-dark mt-2">Postar comentário</button>
+                <button class="btn btn-dark mt-2" type="submit">Postar comentário</button>
             </form>
         </div>
     </section>
-    <!-- <section class="p-5">
+
+    <section class="mt-3 mb-3">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md">
-                    <div class="card bg-dark text-light">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="card-title mb-3">
-                            </h3>
-                            <p class="card-text">
-                            </p>
+            <div class="d-flex justify-content-center py-2">
+                <div class="card p-3 mb-2">
+                    <!-- Comentario -->
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column ms-2">
+                            <h6 class="mb-1 text-primary">André</h6>
+                            <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lectus nibh, efficitur in bibendum id, pellentesque quis nibh. Ut dictum facilisis dui, non faucibus dolor sit amet lorem auctor vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque risus mauris</p>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row gap-3 align-items-center">
+                            <div class="d-flex align-items-center"> <i class="bi bi-heart"></i> <span class="ms-1 fs-10">Like</span> </div>
+                            <div class="d-flex align-items-center"> <i class="bi bi-chat"></i> <span class="ms-1 fs-10">Comments</span> </div>
+                        </div>
+                        <div class="d-flex flex-row"> <span class="text-muted fw-normal fs-10">dia hora </span> </div>
+                    </div>
+                    <!-- Comentario!! -->
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 </body>
 <%- include ('./partials/footer.ejs'); %> 

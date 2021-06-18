@@ -130,4 +130,9 @@ routes.get("/articles/page/:num", (req, res) => {
     })
 })
 
+routes.post("/form", (req, res) => {
+    let { form_nome, form_email, form_coment} = req.body
+    console.log(form_nome, form_email, form_coment)
+})
+
 module.exports = routes;
