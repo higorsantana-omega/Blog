@@ -22,10 +22,13 @@
         <div class="container">
             <h3>Deixe sua opnião</h3>
             <p class="mb-2">Seu email não será publicado. Os campos obrigatórios estão marcados com *</p>
-            <form action="/form" method="POST">
+            <form >
                 <div class="form-group mb-2">
                     <label for="form_nome">Nome *</label>
-                    <input type="text" class="form-control mt-1" id="form_nome" name="form_nome" placeholder="Seu nome">
+                    <input type="text" class="form-control mt-1" id="form_nome" name="form_nome" placeholder="Seu nome" required>
+                    <div class="invalid-feedback">
+                        Por favor insira seu nome
+                    </div>
                 </div>
                 <div class="form-group mb-2">
                     <label for="form_email">Email *</label>
@@ -63,5 +66,8 @@
             </div>
         </div>
     </section>
+    <script>
+
+    </script>
 </body>
 <%- include ('./partials/footer.ejs'); %> 
